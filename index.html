@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Olshegish</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1 id="site-title">Olshegish</h1>
+    <nav>
+      <ul>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#calculator" class="nav-link">Calculator</a></li>
+        <li><a href="#diet" class="nav-link">Diet</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+      </ul>
+    </nav>
+    <select id="language-select">
+      <option value="en">English</option>
+      <option value="ru">Русский</option>
+      <option value="kz">Қазақша</option>
+    </select>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2 data-en="Welcome" data-ru="Добро пожаловать" data-kz="Қош келдіңіз">Welcome</h2>
+      <p data-en="Your assistant in health and nutrition." data-ru="Ваш помощник в здоровье и питании." data-kz="Сіздің денсаулық пен тамақтанудағы көмекшіңіз.">
+        Your assistant in health and nutrition.
+      </p>
+    </section>
+
+    <section id="calculator">
+      <h2 data-en="Body Fat Calculator" data-ru="Калькулятор жира" data-kz="Май пайызын есептеу">Body Fat Calculator</h2>
+      <label>Gender: <select id="gender"><option value="male">Male</option><option value="female">Female</option></select></label>
+      <label>Age: <input type="number" id="age" /></label>
+      <label>Weight (kg): <input type="number" id="weight" /></label>
+      <label>Height (cm): <input type="number" id="height" /></label>
+      <label>Waist (cm): <input type="number" id="waist" /></label>
+      <label>Neck (cm): <input type="number" id="neck" /></label>
+      <label id="hip-label" style="display: none;">Hip (cm): <input type="number" id="hip" /></label>
+      <button onclick="calculateFat()">Calculate</button>
+      <p id="result"></p>
+    </section>
+
+    <section id="diet">
+      <h2 data-en="Diet and Tips" data-ru="Диета и советы" data-kz="Диета және кеңестер">Diet and Tips</h2>
+      <p data-en="Eat clean, train hard, rest well."
+         data-ru="Питайтесь правильно, тренируйтесь усердно, отдыхайте хорошо."
+         data-kz="Дұрыс тамақтаныңыз, жақсы демалыңыз, жаттығуды ұмытпаңыз.">
+         Eat clean, train hard, rest well.
+      </p>
+    </section>
+
+    <section id="about">
+      <h2 data-en="About Olshegish" data-ru="О проекте" data-kz="Жоба туралы">About Olshegish</h2>
+      <p data-en="Olshegish is a tool to help people track body fat and improve their nutrition."
+         data-ru="Olshegish — это инструмент для отслеживания жира и улучшения питания."
+         data-kz="Olshegish — бұл май пайызын бақылап, тамақтануды жақсартуға көмектесетін құрал.">
+         Olshegish is a tool to help people track body fat and improve their nutrition.
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
