@@ -5,19 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Olshegish</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <header>
     <h1 id="site-title">Olshegish</h1>
     <nav>
-      <a href="#home" class="nav-link">Home</a>
-      <a href="#calculator" class="nav-link">Calculator</a>
-      <a href="#diet" class="nav-link">Diet</a>
-      <a href="#about" class="nav-link">About</a>
       <a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a>
       <a href="#calculator" class="nav-link"><i class="fas fa-calculator"></i> Calculator</a>
       <a href="#bmi" class="nav-link"><i class="fas fa-weight"></i> BMI</a>
@@ -62,6 +55,21 @@
       <p id="result"></p>
     </section>
 
+    <section id="bmi">
+      <h2>BMI Calculator</h2>
+      <label>Weight (kg): <input type="number" id="bmi-weight"></label>
+      <label>Height (cm): <input type="number" id="bmi-height"></label>
+      <button onclick="calculateBMI()">Calculate BMI</button>
+      <p id="bmi-result"></p>
+    </section>
+
+    <section id="water">
+      <h2>Daily Water Intake</h2>
+      <label>Weight (kg): <input type="number" id="water-weight"></label>
+      <button onclick="calculateWater()">Calculate Water Intake</button>
+      <p id="water-result"></p>
+    </section>
+
     <section id="diet">
       <h2 data-en="Diet and Tips" data-ru="Диета и советы" data-kz="Диета және кеңестер">Diet and Tips</h2>
       <p data-en="Eat clean, train hard, rest well."
@@ -70,46 +78,27 @@
          Eat clean, train hard, rest well.
       </p>
     </section>
-    <section id="bmi">
-  <h2>BMI Calculator</h2>
-  <label>Weight (kg): <input type="number" id="bmi-weight"></label>
-  <label>Height (cm): <input type="number" id="bmi-height"></label>
-  <button onclick="calculateBMI()">Calculate BMI</button>
-  <p id="bmi-result"></p>
-  </section>
 
-  <section id="water">
-  <h2>Daily Water Intake</h2>
-  <label>Weight (kg): <input type="number" id="water-weight"></label>
-  <button onclick="calculateWater()">Calculate Water Intake</button>
-  <p id="water-result"></p>
-  </section>
-    <section id="about">
-      <h2 data-en="About Olshegish" data-ru="О проекте" data-kz="Жоба туралы">About Olshegish</h2>
-      <p data-en="Olshegish is a tool to help people track body fat and improve their nutrition."
-         data-ru="Olshegish — это инструмент для отслеживания жира и улучшения питания."
-         data-kz="Olshegish — бұл май пайызын бақылап, тамақтануды жақсартуға көмектесетін құрал.">
-         Olshegish is a tool to help people track body fat and improve their nutrition.
-      </p>
-    </section>
     <section id="menu-examples">
-  <h2>Menu Examples</h2>
-  <ul>
-    <li><strong>Breakfast:</strong> Oatmeal, banana, green tea</li>
-    <li><strong>Lunch:</strong> Grilled chicken, brown rice, veggies</li>
-    <li><strong>Dinner:</strong> Baked salmon, quinoa, salad</li>
-    <li><strong>Snack:</strong> Greek yogurt, almonds</li>
-  </ul>
-</section>
+      <h2>Menu Examples</h2>
+      <ul>
+        <li><strong>Breakfast:</strong> Oatmeal, banana, green tea</li>
+        <li><strong>Lunch:</strong> Grilled chicken, brown rice, veggies</li>
+        <li><strong>Dinner:</strong> Baked salmon, quinoa, salad</li>
+        <li><strong>Snack:</strong> Greek yogurt, almonds</li>
+      </ul>
+    </section>
+
     <section id="articles">
-  <h2>Articles</h2>
-  <p>Coming soon: learn more about healthy dieting, fat loss strategies, and muscle gain.</p>
-</section>
+      <h2>Articles</h2>
+      <p>Coming soon: learn more about healthy dieting, fat loss strategies, and muscle gain.</p>
+    </section>
+
     <section id="about">
-  <h2>About Olshegish</h2>
-  <p>Olshegish is created to help you track body fat, BMI, and improve your health habits.</p>
-  <p>Contact: <strong>@iliyashok</strong></p>
-</section>
+      <h2>About Olshegish</h2>
+      <p>Olshegish is created to help you track body fat, BMI, and improve your health habits.</p>
+      <p>Contact: <strong>@iliyashok</strong></p>
+    </section>
   </main>
 
   <footer>
@@ -117,19 +106,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-function calculateBMI() {
-  const weight = parseFloat(document.getElementById("bmi-weight").value);
-  const height = parseFloat(document.getElementById("bmi-height").value) / 100;
-  const bmi = weight / (height * height);
-  document.getElementById("bmi-result").innerText = `Your BMI: ${bmi.toFixed(1)}`;
-}
-
-function calculateWater() {
-  const weight = parseFloat(document.getElementById("water-weight").value);
-  const waterIntake = weight * 0.033;
-  document.getElementById("water-result").innerText = `Recommended: ${waterIntake.toFixed(2)} L/day`;
-}
-</script>
 </body>
 </html>
